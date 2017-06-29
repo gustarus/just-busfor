@@ -9,7 +9,53 @@
     "test": "node node_modules/jest/bin/jest.js --watch"
   },
   "dependencies": {
+    "babel": "6.23.0",
+    "babel-plugin-module-alias": "1.6.0",
     "react": "16.0.0-alpha.12",
-    "react-native": "^0.45.1"
+    "react-native": "0.45.1"
+  },
+  "babel": {
+    "presets": [
+      "react-native"
+    ],
+    "plugins": [
+      [
+        "module-alias",
+        [
+          {
+            "src": "./core/bricks",
+            "expose": "@bricks"
+          },
+          {
+            "src": "./core/components",
+            "expose": "@components"
+          },
+          {
+            "src": "./core/helpers",
+            "expose": "@helpers"
+          },
+          {
+            "src": "./core/story",
+            "expose": "@story"
+          },
+          {
+            "src": "./core/config",
+            "expose": "@config"
+          },
+          {
+            "src": "./core/instances",
+            "expose": "@instances"
+          },
+          {
+            "src": "./core/theme",
+            "expose": "@theme"
+          },
+          {
+            "src": "./core/decorators",
+            "expose": "@decorators"
+          }
+        ]
+      ]
+    ]
   }
 }
