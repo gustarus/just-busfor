@@ -2,12 +2,13 @@
 
 import React, {Component} from 'react';
 import {View} from 'react-native';
-import Item from 'item';
+import {styles} from '@theme';
+import Item from './item';
 
 class List extends Component {
 
   render() {
-    const {items, loading} = this.state;
+    const {items, loading} = this.props;
     if (loading) {
       return null;
     }
@@ -24,6 +25,6 @@ class List extends Component {
   }
 }
 
-const style = styles({});
+const style = styles();
 
 export default List;

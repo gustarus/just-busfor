@@ -3,8 +3,9 @@
 import React, {Component} from 'react';
 import {View, StatusBar, ActivityIndicator} from 'react-native';
 import {app} from '@instances';
-import Filter from 'filter';
-import List from 'list';
+import {styles} from '@theme';
+import Filter from './filter';
+import List from './list';
 
 class ListScene extends Component {
 
@@ -45,7 +46,8 @@ class ListScene extends Component {
   }
 
   onItemPick(item) {
-    this.props.navigator.push({id: 'item', item});
+    const {navigate} = this.props.navigation;
+    navigate('item', {item});
   }
 }
 
