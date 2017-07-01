@@ -16,8 +16,8 @@ class Item extends Component {
   render() {
     const {cityFrom, cityTo, dateTimeFrom, dateTimeTo, price} = this.props;
     return (
-      <TouchableWithoutFeedback onPress={this.onPick}>
-        <View>
+      <TouchableWithoutFeedback onPress={this.onPick} style={style.item}>
+        <View style={style.label}>
           <Text>{cityFrom} -> {cityTo}, {price}р</Text>
           <Text>Отправление: {moment.unix(dateTimeFrom).format(dateTimeFormat)}</Text>
           <Text>Прибытие: {moment.unix(dateTimeTo).format(dateTimeFormat)}</Text>
@@ -31,6 +31,23 @@ class Item extends Component {
   }
 }
 
-const style = styles();
+const style = styles({
+  item: {
+    marginTop: 10,
+    paddingVertical: 10,
+    height: 36,
+    alignSelf: 'stretch',
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+
+  label: {
+    padding: 5,
+    backgroundColor: 'rgba(255,255,255,0.1)',
+    borderWidth: 1,
+    borderColor: 'rgba(242,107,99,0.6)',
+    marginTop: 20
+  }
+});
 
 export default Item;

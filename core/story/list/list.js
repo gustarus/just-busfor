@@ -1,7 +1,7 @@
 'use strict';
 
 import React, {Component} from 'react';
-import {View} from 'react-native';
+import {ScrollView} from 'react-native';
 import {styles} from '@theme';
 import Item from './item';
 
@@ -14,12 +14,12 @@ class List extends Component {
     }
 
     return (
-      <View>
+      <ScrollView style={style.list}>
         {items.map((item, i) => (
           <Item key={i} {...item}
                 onPick={() => this.onPick(item)}/>
         ))}
-      </View>
+      </ScrollView>
     );
   }
 
@@ -28,6 +28,10 @@ class List extends Component {
   }
 }
 
-const style = styles();
+const style = styles({
+  list: {
+    padding: 10
+  }
+});
 
 export default List;

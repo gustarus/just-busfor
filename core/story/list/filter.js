@@ -13,12 +13,12 @@ class Filter extends Component {
 
   render() {
     return (
-      <View>
-        <TouchableHighlight onPress={() => this.onParamSwitch('time')}>
-          <Text>Время</Text>
+      <View style={style.filter}>
+        <TouchableHighlight onPress={() => this.onParamSwitch('time')} style={style.filterParam} underlayColor={style.filterParamUnderlay}>
+          <Text style={style.filterParamLabel}>Время</Text>
         </TouchableHighlight>
-        <TouchableHighlight onPress={() => this.onParamSwitch('price')}>
-          <Text>Цена</Text>
+        <TouchableHighlight onPress={() => this.onParamSwitch('price')} style={style.filterParam} underlayColor={style.filterParamUnderlay}>
+          <Text style={style.filterParamLabel}>Цена</Text>
         </TouchableHighlight>
       </View>
     );
@@ -33,6 +33,17 @@ class Filter extends Component {
   }
 }
 
-const style = styles();
+const style = styles({
+  filter: {
+    padding: 10
+  },
+
+  filterParam: {
+    paddingVertical: 10,
+    marginTop: 20
+  },
+
+  filterParamUnderlay: '#F2948E'
+});
 
 export default Filter;

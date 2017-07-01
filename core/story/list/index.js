@@ -38,7 +38,9 @@ class ListScene extends Component {
       <View style={style.layout}>
         <StatusBar barStyle='light-content'/>
         <Filter {...filter} loading={loading} onChange={this.onFilterChange}/>
-        <List items={items} loading={loading} onPick={this.onItemPick}/>
+        <View style={style.content}>
+          <List items={items} loading={loading} onPick={this.onItemPick}/>
+        </View>
       </View>
     );
   }
