@@ -31,6 +31,6 @@ class Item extends Component {
   }
 }
 
-const style = styles({});
+const style = styles();
 
 export default Item;

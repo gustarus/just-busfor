@@ -33,6 +33,6 @@ class Filter extends Component {
   }
 }
 
-const style = styles({});
+const style = styles();
 
 export default Filter;
