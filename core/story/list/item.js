@@ -3,6 +3,8 @@
 import React, {Component} from 'react';
 import {View, TouchableWithoutFeedback, Text} from 'react-native';
 import {styles} from '@theme';
+import moment from 'moment';
+const dateTimeFormat = 'D MMMM, HH:mm';
 
 class Item extends Component {
 
@@ -12,11 +14,13 @@ class Item extends Component {
   }
 
   render() {
-    const {cityFrom, cityTo} = this.props;
+    const {cityFrom, cityTo, dateTimeFrom, dateTimeTo, price} = this.props;
     return (
       <TouchableWithoutFeedback onPress={this.onPick}>
         <View>
-          <Text>{cityFrom} -> {cityTo}</Text>
+          <Text>{cityFrom} -> {cityTo}, {price}р</Text>
+          <Text>Отправление: {moment.unix(dateTimeFrom).format(dateTimeFormat)}</Text>
+          <Text>Прибытие: {moment.unix(dateTimeTo).format(dateTimeFormat)}</Text>
         </View>
       </TouchableWithoutFeedback>
     );

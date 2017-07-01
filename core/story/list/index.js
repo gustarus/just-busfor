@@ -25,7 +25,9 @@ class ListScene extends Component {
   }
 
   componentDidMount() {
-    app.api.get('/search').then(items => {
+    app.api.get('/search').then(rawItems => {
+      const {filter} = this.state;
+      const items = this.applyFilter(rawItems, filter);
       this.setState({items, loading: false});
     });
   }
@@ -41,8 +43,22 @@ class ListScene extends Component {
     );
   }
 
+  applyFilter(items, filter) {
+    return items
+      .sort((a, b) => filter.time === 'asc' ? a.dateTimeFrom - b.dateTimeFrom : b.dateTimeFrom - a.dateTimeFrom)
+      .sort((a, b) => {
+        if (a.dateTimeFrom === b.dateTimeFrom) {
+          return filter.price === 'asc' ? a.price - b.price : b.price - a.price;
+        }
+
+        return null;
+      });
+  }
+
   onFilterChange(filter) {
-    this.setState({filter});
+    const rawItems = this.state.items;
+    const items = this.applyFilter(rawItems, filter);
+    this.setState({items, filter});
   }
 
   onItemPick(item) {
