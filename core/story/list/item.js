@@ -1,7 +1,7 @@
 'use strict';
 
 import React, {Component} from 'react';
-import {View} from 'react-native';
+import {View, TouchableWithoutFeedback, Text} from 'react-native';
 import {styles} from '@theme';
 
 class Item extends Component {
@@ -12,7 +12,14 @@ class Item extends Component {
   }
 
   render() {
-    return <View/>;
+    const {cityFrom, cityTo} = this.props;
+    return (
+      <TouchableWithoutFeedback onPress={this.onPick}>
+        <View>
+          <Text>{cityFrom} -> {cityTo}</Text>
+        </View>
+      </TouchableWithoutFeedback>
+    );
   }
 
   onPick() {

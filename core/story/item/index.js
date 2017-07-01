@@ -1,13 +1,20 @@
 'use strict';
 
 import React, {Component} from 'react';
-import {View} from 'react-native';
+import {View, Text} from 'react-native';
 import {styles} from '@theme';
 
 class ItemScene extends Component {
 
   render() {
-    return <View style={style.layout}/>;
+    const {item} = this.props.navigation.state.params;
+    const {cityFrom, cityTo} = item;
+
+    return (
+      <View style={style.layout}>
+        <Text>{cityFrom} -> {cityTo}</Text>
+      </View>
+    );
   }
 }
 

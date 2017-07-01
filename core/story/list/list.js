@@ -15,7 +15,10 @@ class List extends Component {
 
     return (
       <View>
-        {items.map(item => <Item {...item} onPick={() => this.onPick(item)}/>)}
+        {items.map((item, i) => (
+          <Item key={i} {...item}
+                onPick={() => this.onPick(item)}/>
+        ))}
       </View>
     );
   }
