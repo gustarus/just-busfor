@@ -13,7 +13,7 @@ export default function (style = null) {
       width,
       height,
       position: 'relative',
-      backgroundColor: '#ffffff'
+      backgroundColor: '#f4f2f5'
     },
 
     header: {
