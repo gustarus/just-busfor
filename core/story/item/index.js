@@ -3,6 +3,8 @@
 import React, {Component} from 'react';
 import {View, Text} from 'react-native';
 import {BackButton, styles} from '@theme';
+import Item from '@story/list/item';
+import Details from './details';
 
 class ItemScene extends Component {
 
@@ -15,11 +17,13 @@ class ItemScene extends Component {
 
   render() {
     const {item} = this.props.navigation.state.params;
-    const {cityFrom, cityTo} = item;
 
     return (
       <View style={style.layout}>
-        <Text>{cityFrom} -> {cityTo}</Text>
+        <View style={style.content}>
+          <Item {...item}/>
+          <Details {...item}/>
+        </View>
       </View>
     );
   }

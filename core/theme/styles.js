@@ -16,6 +16,10 @@ export default function (style = null) {
       backgroundColor: '#f4f2f5'
     },
 
+    content: {
+      padding: 10
+    },
+
     header: {
       backgroundColor: '#e22a32'
     },
