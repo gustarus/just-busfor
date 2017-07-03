@@ -9,6 +9,12 @@ import List from './list';
 
 class ListScene extends Component {
 
+  static navigationOptions = () => ({
+    title: 'Выберите рейс',
+    headerStyle: style.header,
+    headerTitleStyle: style.headerTitle
+  });
+
   state = {
     items: [],
     loading: true,

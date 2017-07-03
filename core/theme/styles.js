@@ -14,6 +14,17 @@ export default function (style = null) {
       height,
       position: 'relative',
       backgroundColor: '#ffffff'
+    },
+
+    header: {
+      backgroundColor: '#e22a32'
+    },
+
+    headerTitle: {
+      fontSize: 16,
+      color: '#ffffff',
+      fontWeight: '500',
+      width: '100%'
     }
   }, style);
 }
