@@ -3,14 +3,20 @@
 
 ## iOS screenshots
 **Items list**
-![](docs/ios-list.png)
+
+<img src="/gustarus/just-busfor/blob/master/docs/ios-list.png" width="250">
 
 **Item details**
-![](docs/ios-item.png)
+
+<img src="/gustarus/just-busfor/blob/master/docs/ios-item.png" width="250">
+
 
 ## Android screenshots
 **Items list**
-![](docs/android-list.png)
+
+<img src="/gustarus/just-busfor/blob/master/docs/android-list.png" width="250">
+
 
 **Item details**
-![](docs/android-item.png)
+
+<img src="/gustarus/just-busfor/blob/master/docs/android-list.png" width="250">
