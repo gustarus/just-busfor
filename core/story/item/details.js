@@ -32,12 +32,9 @@ const style = styles({
     borderRadius: 4,
     backgroundColor: '#fffeff',
     shadowColor: '#000000',
-    shadowOffset: {
-      width: 0,
-      height: 1
-    },
     shadowRadius: 1,
-    shadowOpacity: 0.1
+    shadowOpacity: 0.1,
+    shadowOffset: {width: 0, height: 1}
   },
 
   detailsDeparture: {

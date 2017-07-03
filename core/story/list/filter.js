@@ -51,10 +51,7 @@ const style = styles({
     shadowColor: '#000000',
     shadowRadius: 1,
     shadowOpacity: 0.1,
-    shadowOffset: {
-      width: 0,
-      height: 1
-    }
+    shadowOffset: {width: 0, height: 1}
   },
 
   filterLabel: {

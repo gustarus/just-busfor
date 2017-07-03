@@ -65,15 +65,12 @@ const style = styles({
     backgroundColor: '#fffeff',
     height: 67,
     marginBottom: 5,
-    shadowColor: '#000000',
-    shadowOffset: {
-      width: 0,
-      height: 1
-    },
     flexWrap: 'wrap',
     flexDirection: 'row',
+    shadowColor: '#000000',
     shadowRadius: 1,
-    shadowOpacity: 0.1
+    shadowOpacity: 0.1,
+    shadowOffset: {width: 0, height: 1}
   },
 
   itemDeparture: {
