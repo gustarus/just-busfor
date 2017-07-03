@@ -1,7 +1,7 @@
 'use strict';
 
 import React, {Component} from 'react';
-import {View, Text, TouchableHighlight} from 'react-native';
+import {View, Text, TouchableHighlight, Platform} from 'react-native';
 import {styles} from '@theme';
 
 class Filter extends Component {
@@ -12,13 +12,15 @@ class Filter extends Component {
   }
 
   render() {
+    const {time, price} = this.props;
     return (
       <View style={style.filter}>
-        <TouchableHighlight onPress={() => this.onParamSwitch('time')} style={style.filterParam} underlayColor={style.filterParamUnderlay}>
-          <Text style={style.filterParamLabel}>Время</Text>
+        <TouchableHighlight onPress={() => this.onParamSwitch('time')} style={style.filterParam} underlayColor={null}>
+          <Text style={style.filterLabel}>{time === 'asc' ? '↓' : '↑'} Время</Text>
         </TouchableHighlight>
-        <TouchableHighlight onPress={() => this.onParamSwitch('price')} style={style.filterParam} underlayColor={style.filterParamUnderlay}>
-          <Text style={style.filterParamLabel}>Цена</Text>
+        <View style={style.filterBorder}/>
+        <TouchableHighlight onPress={() => this.onParamSwitch('price')} style={style.filterParam} underlayColor={null}>
+          <Text style={style.filterLabel}>{price === 'asc' ? '↓' : '↑'} Цена</Text>
         </TouchableHighlight>
       </View>
     );
@@ -35,15 +37,34 @@ class Filter extends Component {
 
 const style = styles({
   filter: {
-    padding: 10
+    display: 'flex',
+    alignItems: 'flex-start',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    zIndex: 100
   },
 
   filterParam: {
-    paddingVertical: 10,
-    marginTop: 20
+    flex: 1,
+    padding: 10,
+    backgroundColor: '#fffeff',
+    borderBottomWidth: Platform.OS === 'ios' ? 0 : 1,
+    borderColor: '#efefef',
+    shadowColor: '#000000',
+    shadowRadius: 1,
+    shadowOpacity: 0.1,
+    shadowOffset: {width: 0, height: 1}
   },
 
-  filterParamUnderlay: '#F2948E'
+  filterLabel: {
+    textAlign: 'center'
+  },
+
+  filterBorder: {
+    width: 1,
+    height: '100%',
+    backgroundColor: 'transparent'
+  }
 });
 
 export default Filter;

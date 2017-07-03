@@ -2,17 +2,28 @@
 
 import React, {Component} from 'react';
 import {View, Text} from 'react-native';
-import {styles} from '@theme';
+import {BackButton, styles} from '@theme';
+import Item from '@story/list/item';
+import Details from './details';
 
 class ItemScene extends Component {
 
+  static navigationOptions = ({navigation}) => ({
+    title: 'Подробности рейса',
+    headerStyle: style.header,
+    headerTitleStyle: style.headerTitle,
+    headerLeft: <BackButton onPress={() => navigation.goBack(null)}/>
+  });
+
   render() {
     const {item} = this.props.navigation.state.params;
-    const {cityFrom, cityTo} = item;
 
     return (
       <View style={style.layout}>
-        <Text>{cityFrom} -> {cityTo}</Text>
+        <View style={style.content}>
+          <Item {...item}/>
+          <Details {...item}/>
+        </View>
       </View>
     );
   }

@@ -14,7 +14,7 @@ class List extends Component {
     }
 
     return (
-      <ScrollView style={style.list}>
+      <ScrollView style={style.content}>
         {items.map((item, i) => (
           <Item key={i} {...item}
                 onPick={() => this.onPick(item)}/>
@@ -28,10 +28,6 @@ class List extends Component {
   }
 }
 
-const style = styles({
-  list: {
-    padding: 10
-  }
-});
+const style = styles();
 
 export default List;

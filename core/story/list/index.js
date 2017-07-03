@@ -9,6 +9,12 @@ import List from './list';
 
 class ListScene extends Component {
 
+  static navigationOptions = () => ({
+    title: 'Выберите рейс',
+    headerStyle: style.header,
+    headerTitleStyle: style.headerTitle
+  });
+
   state = {
     items: [],
     loading: true,
@@ -38,9 +44,7 @@ class ListScene extends Component {
       <View style={style.layout}>
         <StatusBar barStyle='light-content'/>
         <Filter {...filter} loading={loading} onChange={this.onFilterChange}/>
-        <View style={style.content}>
-          <List items={items} loading={loading} onPick={this.onItemPick}/>
-        </View>
+        <List items={items} loading={loading} onPick={this.onItemPick}/>
       </View>
     );
   }
