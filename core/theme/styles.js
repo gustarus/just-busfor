@@ -1,10 +1,10 @@
 'use strict';
 
 import _ from 'lodash';
-import {Platform} from 'react-native';
-import {getActiveAreaSize} from '@helpers';
+import {Dimensions, Platform} from 'react-native';
 
-const {width, height} = getActiveAreaSize();
+const width = Dimensions.get('window').width;
+const height = Dimensions.get('window').height;
 
 export default function (style = null) {
   // import window size
