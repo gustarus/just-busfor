@@ -77,8 +77,6 @@ const style = styles({
   },
 
   itemDeparture: {
-    display: 'flex',
-    alignItems: 'center',
     flexGrow: 1
   },
 
