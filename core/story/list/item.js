@@ -1,7 +1,7 @@
 'use strict';
 
 import React, {Component} from 'react';
-import {View, TouchableWithoutFeedback, Text, Image} from 'react-native';
+import {View, TouchableWithoutFeedback, Text, Image, Platform} from 'react-native';
 import {styles} from '@theme';
 import moment from 'moment';
 import arrowRightIcon from './icons/arrow-right.png';
@@ -57,6 +57,8 @@ class Item extends Component {
 
 const style = styles({
   item: {
+    borderWidth: Platform.OS === 'ios' ? 0 : 1,
+    borderColor: '#efefef',
     paddingVertical: 12,
     paddingHorizontal: 0,
     alignSelf: 'stretch',

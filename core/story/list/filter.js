@@ -1,7 +1,7 @@
 'use strict';
 
 import React, {Component} from 'react';
-import {View, Text, TouchableHighlight} from 'react-native';
+import {View, Text, TouchableHighlight, Platform} from 'react-native';
 import {styles} from '@theme';
 
 class Filter extends Component {
@@ -48,6 +48,8 @@ const style = styles({
     flex: 1,
     padding: 10,
     backgroundColor: '#fffeff',
+    borderBottomWidth: Platform.OS === 'ios' ? 0 : 1,
+    borderColor: '#efefef',
     shadowColor: '#000000',
     shadowRadius: 1,
     shadowOpacity: 0.1,

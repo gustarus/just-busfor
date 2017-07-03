@@ -36,6 +36,8 @@ const style = styles({
   details: {
     padding: 12,
     borderRadius: 4,
+    borderWidth: Platform.OS === 'ios' ? 0 : 1,
+    borderColor: '#efefef',
     backgroundColor: '#fffeff',
     shadowColor: '#000000',
     shadowRadius: 1,
