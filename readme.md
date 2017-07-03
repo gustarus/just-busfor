@@ -19,3 +19,5 @@ Items list | Item details
 * [ ] Add eslint validator.
 * [ ] Implement tests for the components.
 * [ ] Remove code duplication.
+* [ ] Add icons.
+* [ ] Add a splash screen.
