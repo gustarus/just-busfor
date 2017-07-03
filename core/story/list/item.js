@@ -64,7 +64,7 @@ const style = styles({
     borderRadius: 4,
     backgroundColor: '#fffeff',
     height: 67,
-    marginTop: 5,
+    marginBottom: 5,
     shadowColor: '#000000',
     shadowOffset: {
       width: 0,
