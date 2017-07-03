@@ -1,7 +1,7 @@
 'use strict';
 
 import React, {Component} from 'react';
-import {View, Text, Image} from 'react-native';
+import {View, Text, Image, Platform} from 'react-native';
 import {BackButton, styles} from '@theme';
 import Item from '@story/list/item';
 import Details from './details';
@@ -14,13 +14,19 @@ class ItemScene extends Component {
 
     return (
       <View style={style.details}>
-        <Text style={style.detailsDeparture}>
-          <Image source={placemarkIcon} style={style.detailsPlacemark}/>  {cityFrom}
-        </Text>
+        <View style={style.detailsLocation}>
+          <View style={style.detailsPlacemark}>
+            <Image source={placemarkIcon} style={style.detailsPlacemarkIcon}/>
+          </View>
+          <Text>{cityFrom}</Text>
+        </View>
         <Text style={style.detailsArrow}>↓</Text>
-        <Text style={style.detailsArrive}>
-          <Image source={placemarkIcon} style={style.detailsPlacemark}/>  {cityTo}
-        </Text>
+        <View style={style.detailsLocation}>
+          <View style={style.detailsPlacemark}>
+            <Image source={placemarkIcon} style={style.detailsPlacemarkIcon}/>
+          </View>
+          <Text>{cityTo}</Text>
+        </View>
       </View>
     );
   }
@@ -37,24 +43,30 @@ const style = styles({
     shadowOffset: {width: 0, height: 1}
   },
 
-  detailsDeparture: {
-    marginBottom: 6,
-    fontSize: 16
-  },
-
-  detailsArrive: {
-    marginTop: 7,
-    fontSize: 16
-  },
-
-  detailsArrow: {
-    color: '#a2a2a2'
+  detailsLocation: {
+    alignSelf: 'stretch',
+    alignItems: 'flex-start',
+    flexWrap: 'wrap',
+    flexDirection: 'row'
   },
 
   detailsPlacemark: {
-    marginTop: 2,
+    width: 20,
+    alignItems: 'center',
+    marginRight: 6
+  },
+
+  detailsPlacemarkIcon: {
     width: 11.5,
     height: 15.5
+  },
+
+  detailsArrow: {
+    width: 20,
+    textAlign: 'center',
+    paddingVertical: 9,
+    color: '#a2a2a2',
+    fontSize: 16
   }
 });
 
