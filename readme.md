@@ -1,4 +1,5 @@
 # Just Busfor
+See the task: https://github.com/busfor/mobile/blob/master/Exercise.md.
 
 
 ## iOS screenshots
